@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "alarm-integration"
+version = "1.0.0"
+description = "CatchProbe alarm integration: fetch alarms, forward details to a webhook and mark them passive."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "requests>=2.31,<3",
+    "python-dotenv>=1.0,<2",
+]
+
+[project.scripts]
+alarm-integration = "alarm_integration.cli:main"
+
+[tool.setuptools]
+packages = ["alarm_integration"]

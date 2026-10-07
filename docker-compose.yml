@@ -1,0 +1,11 @@
+services:
+  alarm-integration:
+    build: .
+    image: alarm-integration:latest
+    container_name: alarm-integration
+    env_file:
+      - .env
+    # Default command (polling). Override for a single run:
+    #   docker compose run --rm alarm-integration run --once
+    command: ["run"]
+    restart: unless-stopped
